@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wa8-H0-yPp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TRListViewController" id="BYZ-38-t0r" customClass="TRListViewController" customModule="Trello" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LT5-A1-04M">
+                                <rect key="frame" x="0.0" y="126" width="414" height="770"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRCreateListCell" id="Inm-4l-SbZ" customClass="TRCreateListCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Inm-4l-SbZ" id="DBJ-Jx-if3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9T-8D-TE4">
+                                                    <rect key="frame" x="20" y="4" width="374" height="38"/>
+                                                    <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="yOi-Fy-r9p"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <state key="normal" title="Create list">
+                                                        <color key="titleColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="createListButtonClicked" destination="Inm-4l-SbZ" eventType="touchUpInside" id="WHK-eM-cfd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y9T-8D-TE4" firstAttribute="leading" secondItem="DBJ-Jx-if3" secondAttribute="leading" constant="20" id="TAB-nN-OyG"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y9T-8D-TE4" secondAttribute="bottom" constant="4" id="fzZ-99-2B3"/>
+                                                <constraint firstItem="Y9T-8D-TE4" firstAttribute="centerY" secondItem="DBJ-Jx-if3" secondAttribute="centerY" id="h4I-Mk-bO5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y9T-8D-TE4" secondAttribute="trailing" constant="20" id="kbY-Ik-eTx"/>
+                                                <constraint firstItem="Y9T-8D-TE4" firstAttribute="top" secondItem="DBJ-Jx-if3" secondAttribute="top" constant="4" id="nc1-ah-YTJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRSetListNameCell" id="8bx-ao-hcr" customClass="TRSetListNameCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="74" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8bx-ao-hcr" id="s6w-py-51M">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The name of the list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-lx-YPu">
+                                                    <rect key="frame" x="20" y="11.5" width="278" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="dso-Lr-q8a"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="8bx-ao-hcr" id="vAZ-Wq-0b4"/>
+                                                    </connections>
+                                                </textField>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHa-hJ-aUP">
+                                                    <rect key="frame" x="318" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="Hfu-oX-T4S"/>
+                                                        <constraint firstAttribute="height" constant="32" id="hgh-UD-2gQ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icon-accept-disabled"/>
+                                                    <connections>
+                                                        <action selector="acceptButtonClicked" destination="8bx-ao-hcr" eventType="touchUpInside" id="ioo-Bt-nKb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ps-Sc-kMs">
+                                                    <rect key="frame" x="362" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="bYv-UG-bSY"/>
+                                                        <constraint firstAttribute="height" constant="32" id="m5I-cN-kcn"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icon-cancel"/>
+                                                    <connections>
+                                                        <action selector="cancelButtonClicked" destination="8bx-ao-hcr" eventType="touchUpInside" id="uOU-iD-JeI"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pHa-hJ-aUP" firstAttribute="centerY" secondItem="s6w-py-51M" secondAttribute="centerY" id="0ju-93-mYv"/>
+                                                <constraint firstItem="3ps-Sc-kMs" firstAttribute="centerY" secondItem="s6w-py-51M" secondAttribute="centerY" id="FWQ-Sp-Q2p"/>
+                                                <constraint firstItem="3ps-Sc-kMs" firstAttribute="leading" secondItem="pHa-hJ-aUP" secondAttribute="trailing" constant="12" id="OwB-2E-8uo"/>
+                                                <constraint firstItem="pHa-hJ-aUP" firstAttribute="leading" secondItem="FhX-lx-YPu" secondAttribute="trailing" constant="20" id="bne-jy-zOJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="3ps-Sc-kMs" secondAttribute="trailing" constant="20" id="dKl-mR-XyF"/>
+                                                <constraint firstItem="FhX-lx-YPu" firstAttribute="leading" secondItem="s6w-py-51M" secondAttribute="leading" constant="20" id="eyI-Yr-sGv"/>
+                                                <constraint firstItem="FhX-lx-YPu" firstAttribute="centerY" secondItem="s6w-py-51M" secondAttribute="centerY" id="xKX-SK-fYu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="pHa-hJ-aUP" id="AdE-hC-1xs"/>
+                                            <outlet property="listNameTextField" destination="FhX-lx-YPu" id="5BG-xw-nAR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRListCell" id="p6e-ha-VCk" customClass="TRListCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="118" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6e-ha-VCk" id="oop-hF-jHl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The name of the existing list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7S-fl-cUL">
+                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="f6z-eQ-BYO"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="a7S-fl-cUL" secondAttribute="trailing" constant="20" id="251-Rc-hsJ"/>
+                                                <constraint firstItem="a7S-fl-cUL" firstAttribute="centerY" secondItem="oop-hF-jHl" secondAttribute="centerY" id="QK4-XS-4ov"/>
+                                                <constraint firstItem="a7S-fl-cUL" firstAttribute="leading" secondItem="oop-hF-jHl" secondAttribute="leading" constant="20" id="Qns-kd-O1E"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="listNameTextField" destination="a7S-fl-cUL" id="7fC-KE-lam"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2bh-gq-kCE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Eew-Wh-cVl"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-gz-de9">
+                                <rect key="frame" x="12" y="64" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="K9o-rq-Dm3"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="twP-4K-fhT"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EcT-gz-de9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2f5-qs-bdr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LT5-A1-04M" secondAttribute="trailing" id="D4p-9M-Gtt"/>
+                            <constraint firstItem="LT5-A1-04M" firstAttribute="top" secondItem="EcT-gz-de9" secondAttribute="bottom" constant="18" id="EoM-AG-cf4"/>
+                            <constraint firstItem="LT5-A1-04M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T0q-wx-wHw"/>
+                            <constraint firstItem="EcT-gz-de9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="ayk-dr-XyB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EcT-gz-de9" secondAttribute="trailing" constant="12" id="k1r-j3-KlG"/>
+                            <constraint firstAttribute="bottom" secondItem="LT5-A1-04M" secondAttribute="bottom" id="m0C-fy-e2t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WKs-pO-Z2U"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="LT5-A1-04M" id="D82-Yt-Ocl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Cards View Controller-->
+        <scene sceneID="hpd-xF-Xnb">
+            <objects>
+                <viewController storyboardIdentifier="TRCardsViewController" id="GdS-eJ-pbr" customClass="TRCardsViewController" customModule="Trello" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvu-rx-IVz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-BP-g8h">
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRCreateCardCell" id="yWO-S3-3bx" customClass="TRCreateCardCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWO-S3-3bx" id="30x-oP-YtU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-Qy-Mri">
+                                                    <rect key="frame" x="12" y="4" width="390" height="38"/>
+                                                    <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="pr2-yx-f7M"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <state key="normal" title="Create card">
+                                                        <color key="titleColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="createCardButtonClicked" destination="yWO-S3-3bx" eventType="touchUpInside" id="QeW-Kl-oEp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z5h-Qy-Mri" firstAttribute="centerY" secondItem="30x-oP-YtU" secondAttribute="centerY" id="EIw-7u-mPA"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z5h-Qy-Mri" secondAttribute="trailing" constant="12" id="EwI-pj-Qpb"/>
+                                                <constraint firstItem="Z5h-Qy-Mri" firstAttribute="top" secondItem="30x-oP-YtU" secondAttribute="top" constant="4" id="PfX-mt-Dfh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z5h-Qy-Mri" secondAttribute="bottom" constant="4" id="uqL-qL-4fT"/>
+                                                <constraint firstItem="Z5h-Qy-Mri" firstAttribute="leading" secondItem="30x-oP-YtU" secondAttribute="leading" constant="12" id="xnz-je-Ki0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRSetCardNameCell" id="viC-TR-cOA" customClass="TRSetCardNameCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="74" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="viC-TR-cOA" id="SCA-BH-hxV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The name of the card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-OS-ktd">
+                                                    <rect key="frame" x="20" y="11.5" width="278" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="TlB-Y4-APv"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="viC-TR-cOA" id="HKc-xC-s7b"/>
+                                                    </connections>
+                                                </textField>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz1-3N-3VI">
+                                                    <rect key="frame" x="318" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="JKP-W6-8wd"/>
+                                                        <constraint firstAttribute="height" constant="32" id="dkA-xs-qsM"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icon-accept-disabled"/>
+                                                    <connections>
+                                                        <action selector="acceptButtonClicked" destination="viC-TR-cOA" eventType="touchUpInside" id="Qsu-zG-iNy"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9K-0g-iO7">
+                                                    <rect key="frame" x="362" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="fvD-LA-EDE"/>
+                                                        <constraint firstAttribute="width" constant="32" id="jqT-Eg-DAB"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icon-cancel"/>
+                                                    <connections>
+                                                        <action selector="cancelButtonClicked" destination="viC-TR-cOA" eventType="touchUpInside" id="fNe-Z3-RHV"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3CI-OS-ktd" firstAttribute="leading" secondItem="SCA-BH-hxV" secondAttribute="leading" constant="20" id="ChP-yn-0kf"/>
+                                                <constraint firstItem="3CI-OS-ktd" firstAttribute="centerY" secondItem="SCA-BH-hxV" secondAttribute="centerY" id="GTs-gR-8PL"/>
+                                                <constraint firstAttribute="trailing" secondItem="B9K-0g-iO7" secondAttribute="trailing" constant="20" id="IUJ-ex-gJs"/>
+                                                <constraint firstItem="B9K-0g-iO7" firstAttribute="centerY" secondItem="SCA-BH-hxV" secondAttribute="centerY" id="Ihf-fk-28J"/>
+                                                <constraint firstItem="B9K-0g-iO7" firstAttribute="leading" secondItem="Dz1-3N-3VI" secondAttribute="trailing" constant="12" id="QJh-Ym-11b"/>
+                                                <constraint firstItem="Dz1-3N-3VI" firstAttribute="leading" secondItem="3CI-OS-ktd" secondAttribute="trailing" constant="20" id="oLD-gx-eCQ"/>
+                                                <constraint firstItem="Dz1-3N-3VI" firstAttribute="centerY" secondItem="SCA-BH-hxV" secondAttribute="centerY" id="uNW-8F-Spx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="Dz1-3N-3VI" id="0pa-pb-tug"/>
+                                            <outlet property="cardNameTextField" destination="3CI-OS-ktd" id="Byu-1g-wLG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRCardCell" id="Mns-Te-nif" customClass="TRCardCell" customModule="Trello" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="118" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mns-Te-nif" id="WV8-bP-6B4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The name of the existing card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wo0-dR-R40">
+                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="wog-bm-twk"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wo0-dR-R40" firstAttribute="centerY" secondItem="WV8-bP-6B4" secondAttribute="centerY" id="M8g-pq-WQk"/>
+                                                <constraint firstAttribute="trailing" secondItem="wo0-dR-R40" secondAttribute="trailing" constant="20" id="Nf6-B6-QWQ"/>
+                                                <constraint firstItem="wo0-dR-R40" firstAttribute="leading" secondItem="WV8-bP-6B4" secondAttribute="leading" constant="20" id="tbS-R6-rsh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardNameTextField" destination="wo0-dR-R40" id="DnE-DD-mdv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GdS-eJ-pbr" id="K2H-bP-hhd"/>
+                                    <outlet property="delegate" destination="GdS-eJ-pbr" id="sOd-4h-w3E"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-UV-x3A">
+                                <rect key="frame" x="12" y="64" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WBd-uV-WxV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GdS-eJ-pbr" id="ja4-Fj-uv2"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uh0-BP-g8h" secondAttribute="bottom" id="3Ed-Ng-Oy8"/>
+                            <constraint firstItem="hC8-f0-DYH" firstAttribute="trailing" secondItem="9cN-UV-x3A" secondAttribute="trailing" constant="12" id="4qQ-CA-lf2"/>
+                            <constraint firstItem="uh0-BP-g8h" firstAttribute="trailing" secondItem="hC8-f0-DYH" secondAttribute="trailing" id="DSO-em-rh6"/>
+                            <constraint firstItem="9cN-UV-x3A" firstAttribute="leading" secondItem="hC8-f0-DYH" secondAttribute="leading" constant="12" id="Mh4-S8-Nlg"/>
+                            <constraint firstItem="9cN-UV-x3A" firstAttribute="top" secondItem="hC8-f0-DYH" secondAttribute="top" constant="20" id="j3g-K0-T76"/>
+                            <constraint firstItem="uh0-BP-g8h" firstAttribute="leading" secondItem="hC8-f0-DYH" secondAttribute="leading" id="nfu-j3-NIT"/>
+                            <constraint firstItem="uh0-BP-g8h" firstAttribute="top" secondItem="9cN-UV-x3A" secondAttribute="bottom" constant="20" id="tAp-e4-LZq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hC8-f0-DYH"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="uh0-BP-g8h" id="FHN-Me-nO0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLu-W5-Trx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.66666666666674" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zdD-0l-xQ7">
+            <objects>
+                <navigationController id="wa8-H0-yPp" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dAv-OW-4rR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z0Z-Z2-vjv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bb-LB-anL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-accept-disabled" width="60" height="60"/>
+        <image name="icon-cancel" width="256" height="256"/>
+    </resources>
+</document>
